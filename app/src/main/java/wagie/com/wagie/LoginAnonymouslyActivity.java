@@ -5,6 +5,8 @@ import android.os.Bundle;
 
 public class LoginAnonymouslyActivity extends AppCompatActivity {
 
+    private static final String TAG = "LoginActivity";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
