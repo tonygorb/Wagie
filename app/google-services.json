@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "512573766312",
+    "firebase_url": "https://wagie-de14e.firebaseio.com",
+    "project_id": "wagie-de14e",
+    "storage_bucket": "wagie-de14e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:512573766312:android:bd501e1265ad1fb3",
+        "android_client_info": {
+          "package_name": "wagie.com.wagie"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "512573766312-c632as8nkdurlae7u4fqh1gn9trljf34.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "wagie.com.wagie",
+            "certificate_hash": "2ea8b58f8acba67e5b973df6374701c216e4aa5e"
+          }
+        },
+        {
+          "client_id": "512573766312-7ghkkdgg6b07ih2minvfkf040oajkgsp.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "512573766312-7ghkkdgg6b07ih2minvfkf040oajkgsp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDC7Qbv8jzZCpTE_aoNKl1jOdlM68NYfec"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "512573766312-7ghkkdgg6b07ih2minvfkf040oajkgsp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

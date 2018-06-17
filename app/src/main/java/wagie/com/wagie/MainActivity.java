@@ -36,4 +36,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    public void onBackPressed() {
+        Intent finish = new Intent(Intent.ACTION_MAIN);
+        finish.addCategory(Intent.CATEGORY_HOME);
+        finish.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(finish);
+    }
 }

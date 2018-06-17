@@ -5,7 +5,7 @@
     android:id="@+id/login_main_wrapper"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginAnonymouslyActivity">
+    tools:context=".LoginActivity">
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/login_app_name_wrapper"
