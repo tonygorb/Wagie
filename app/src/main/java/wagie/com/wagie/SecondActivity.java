@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.DecimalFormat;
+
 public class SecondActivity extends AppCompatActivity implements View.OnClickListener {
 
     private static final String TAG = "SecondActivity";
@@ -37,7 +39,7 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
         hourlyRate = Double.parseDouble(hValue);
 
         dailySum = hourlyRate * dailyHours;
-        dailyValue = String.valueOf(dailySum);
+        dailyValue = String.format("%.2f", dailySum);
 
         btnDaily = findViewById(R.id.btn_daily_result);
         btnDaily.setOnClickListener(new View.OnClickListener() {
@@ -56,7 +58,7 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
         weekly.setVisibility(View.INVISIBLE);
 
         weeklySum = dailySum * 5;
-        weeklyValue = String.valueOf(weeklySum);
+        weeklyValue = String.format("%.2f", weeklySum);
 
         btnWeekly = findViewById(R.id.btn_weekly_result);
         btnWeekly.setOnClickListener(new View.OnClickListener() {
@@ -72,7 +74,7 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
         monthly.setVisibility(View.INVISIBLE);
 
         monthlySum = weeklySum * 4;
-        monthlyValue = String.valueOf(monthlySum);
+        monthlyValue = String.format("%.2f", monthlySum);
 
         btnMonthly = findViewById(R.id.btn_monthly_result);
         btnMonthly.setOnClickListener(new View.OnClickListener() {
@@ -88,7 +90,7 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
         yearly.setVisibility(View.INVISIBLE);
 
         yearlySum = monthlySum * 12;
-        yearlyValue = String.valueOf(yearlySum);
+        yearlyValue = String.format("%.2f", yearlySum);
 
         btnYearly = findViewById(R.id.btn_yearly_result);
         btnYearly.setOnClickListener(new View.OnClickListener() {
