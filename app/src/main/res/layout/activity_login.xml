@@ -34,7 +34,7 @@
             android:shadowDx="1"
             android:shadowDy="1"
             android:shadowRadius="2"
-            android:text="אני וואיג׳י"
+            android:text="@string/imWagie"
             android:textColor="@android:color/white"
             android:textSize="45sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -54,15 +54,14 @@
             android:shadowDx="1"
             android:shadowDy="1"
             android:shadowRadius="2"
-            android:text="מחשבון שכר פשוט."
+            android:text="@string/simpleWageCalculator"
             android:textColor="@android:color/white"
-            android:textSize="16sp"
+            android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.502"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/tv_app_name"
-            app:layout_constraintVertical_bias="0.83" />
+            app:layout_constraintVertical_bias="0.883" />
 
     </android.support.constraint.ConstraintLayout>
 
@@ -76,9 +75,9 @@
         android:background="@drawable/app_buttons"
         android:fontFamily="@font/heebo_medium"
         android:padding="12dp"
-        android:text="התחל לחשב"
+        android:text="@string/startCalculating"
         android:textColor="@color/btnBlue"
-        android:textSize="14sp"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -91,11 +90,12 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:fontFamily="@font/heebo_light"
-        android:text="האפליקציה פותחה ע״י Tony Gorb ו-Anton Yudaev"
+        android:text="@string/appDevelopers"
         android:textColor="@android:color/white"
         android:textSize="10sp"
         app:layout_constraintBottom_toTopOf="@+id/btn_login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="SmallSp" />
 </android.support.constraint.ConstraintLayout>

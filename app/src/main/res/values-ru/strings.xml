@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name" translatable="false">Wagie</string>
+
+    <string name="imWagie">Я Вейджи</string>
+    <string name="simpleWageCalculator">Простой калькулятор заработной платы.</string>
+    <string name="startCalculating">Начать расчет</string>
+    <string name="appDevelopers">Приложение разработано Tony Gorb и Anton Yudaev</string>
+
+    <string name="hourlyRate">Почасовая плата</string>
+    <string name="hintNumber">32</string>
+    <string name="mainError">Вставьте действительную цифру</string>
+    <string name="btnNext">Далее</string>
+
+    <string name="whatToKnow">Что бы вы хотели знать?</string>
+    <string name="secondSubTitle">* Расчет не включает сверхурочную работу</string>
+    <string name="dailyRate">Ежедневная плата</string>
+    <string name="dailyText">₪ 300</string>
+
+    <string name="weeklyRate">Еженедельная плата</string>
+    <string name="weeklyText">₪ 1,000</string>
+
+    <string name="monthlyRate">Ежемесячная плата</string>
+    <string name="monthlyText">₪ 8,000</string>
+
+    <string name="yearlyRate">Годовая плата</string>
+    <string name="yearlyText">₪ 100,000</string>
+
+    <string name="btnStartOver">Пересчитать</string>
+
+</resources>

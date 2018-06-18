@@ -1,6 +1,29 @@
 <resources>
-    <string name="app_name">Wagie</string>
+    <string name="app_name" translatable="false">Wagie</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="imWagie">אני וואיג׳י</string>
+    <string name="simpleWageCalculator">מחשבון שכר פשוט.</string>
+    <string name="startCalculating">התחל לחשב</string>
+    <string name="appDevelopers">האפליקציה פותחה ע״י Tony Gorb ו-Anton Yudaev</string>
+
+    <string name="hourlyRate">שכר שעתי</string>
+    <string name="hintNumber">32</string>
+    <string name="mainError">הכנס ספרה תקינה</string>
+    <string name="btnNext">הבא</string>
+
+    <string name="whatToKnow">מה תרצה לדעת ?</string>
+    <string name="secondSubTitle">* החישוב לא כולל שעות נוספות</string>
+    <string name="dailyRate">שכר יומי</string>
+    <string name="dailyText">₪ 300</string>
+
+    <string name="weeklyRate">שכר שבועי</string>
+    <string name="weeklyText">₪ 1,000</string>
+
+    <string name="monthlyRate">שכר חודשי</string>
+    <string name="monthlyText">₪ 8,000</string>
+
+    <string name="yearlyRate">שכר שנתי</string>
+    <string name="yearlyText">₪ 100,000</string>
+
+    <string name="btnStartOver">חשב מחדש</string>
 </resources>
