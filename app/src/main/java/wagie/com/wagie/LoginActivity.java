@@ -47,8 +47,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private FirebaseAuth mAuth;
     private Button mLogin;
 
-    private FirebaseAuth.AuthStateListener mAuthListener;
-
     private ProgressDialog mProgress;
 
     @Override
@@ -61,15 +59,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         w.addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 
         mAuth = FirebaseAuth.getInstance();
-
-        mAuthListener = new FirebaseAuth.AuthStateListener() {
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                if (firebaseAuth.getCurrentUser() != null){
-                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
-                }
-            }
-        };
 
         mLogin = findViewById(R.id.btn_login);
         mLogin.setOnClickListener(this);
@@ -87,7 +76,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     protected void onStart() {
         super.onStart();
 
-        mAuth.addAuthStateListener(mAuthListener);
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        updateUI(currentUser);
     }
 
     private void signInAnonymously() {
@@ -113,14 +103,19 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         // [END signin_anonymously]
     }
 
+    private void signOut() {
+
+        //firebase sign out
+        mAuth.signOut();
+        updateUI(null);
+    }
+
     private void updateUI(FirebaseUser user) {
         boolean isSignedIn = (user != null);
 
-        // Status text
         if (isSignedIn) {
             Intent intent = new Intent(LoginActivity.this,MainActivity.class);
             startActivity(intent);
-            overridePendingTransition(0,0);
             finish();
         }
     }
@@ -131,13 +126,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.btn_login:
-                signInAnonymously();
 
                 Intent intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
                 overridePendingTransition(0,0);
-
                 mLogin.setClickable(false);
+
+                signInAnonymously();
 
                 finish();
                 break;

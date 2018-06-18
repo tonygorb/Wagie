@@ -1,6 +1,7 @@
 package wagie.com.wagie;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 import android.support.v4.app.Fragment;
@@ -30,6 +31,8 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
     TextView daily, weekly, monthly, yearly;
     Button btnDaily, btnWeekly, btnMonthly, btnYearly, btnStartOver;
 
+    boolean showFirst = true;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +45,8 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
         Intent intent = getIntent();
         hValue = intent.getStringExtra("Hourly_Rate");
         daily = findViewById(R.id.daily_result);
-        daily.setVisibility(View.INVISIBLE);
+        daily.setVisibility(View.GONE);
+
         hourlyRate = Double.parseDouble(hValue);
 
         dailySum = hourlyRate * dailyHours;
@@ -52,15 +56,22 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
         btnDaily.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                daily.setVisibility(View.VISIBLE);
-                daily.setText(dailyValue);
+                if (showFirst == true){
+                    daily.setVisibility(View.VISIBLE);
+                    daily.setText(dailyValue);
+                    showFirst = false;
+                } else {
+                    daily.setVisibility(View.GONE);
+                    daily.setText("");
+                    showFirst = true;
+                }
             }
         });
 
 
 
         weekly = findViewById(R.id.weekly_result);
-        weekly.setVisibility(View.INVISIBLE);
+        weekly.setVisibility(View.GONE);
 
         weeklySum = dailySum * 5;
         weeklyValue = String.format("%.2f", weeklySum);
@@ -69,14 +80,21 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
         btnWeekly.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                weekly.setVisibility(View.VISIBLE);
-                weekly.setText(weeklyValue);
+                if (showFirst == true){
+                    weekly.setVisibility(View.VISIBLE);
+                    weekly.setText(weeklyValue);
+                    showFirst = false;
+                } else {
+                    weekly.setVisibility(View.GONE);
+                    weekly.setText("");
+                    showFirst = true;
+                }
             }
         });
 
 
         monthly = findViewById(R.id.monthly_result);
-        monthly.setVisibility(View.INVISIBLE);
+        monthly.setVisibility(View.GONE);
 
         monthlySum = weeklySum * 4;
         monthlyValue = String.format("%.2f", monthlySum);
@@ -85,14 +103,21 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
         btnMonthly.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                monthly.setVisibility(View.VISIBLE);
-                monthly.setText(monthlyValue);
+                if (showFirst == true){
+                    monthly.setVisibility(View.VISIBLE);
+                    monthly.setText(monthlyValue);
+                    showFirst = false;
+                } else {
+                    monthly.setVisibility(View.GONE);
+                    monthly.setText("");
+                    showFirst = true;
+                }
             }
         });
 
 
         yearly = findViewById(R.id.yearly_result);
-        yearly.setVisibility(View.INVISIBLE);
+        yearly.setVisibility(View.GONE);
 
         yearlySum = monthlySum * 12;
         yearlyValue = String.format("%.2f", yearlySum);
@@ -101,8 +126,15 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
         btnYearly.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                yearly.setVisibility(View.VISIBLE);
-                yearly.setText(yearlyValue);
+                if (showFirst == true){
+                    yearly.setVisibility(View.VISIBLE);
+                    yearly.setText(yearlyValue);
+                    showFirst = false;
+                } else {
+                    yearly.setVisibility(View.GONE);
+                    yearly.setText("");
+                    showFirst = true;
+                }
             }
         });
 
