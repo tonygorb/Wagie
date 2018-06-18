@@ -8,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -32,6 +34,10 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
+
+        Window w = getWindow();
+        w.addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+        w.addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 
         Intent intent = getIntent();
         hValue = intent.getStringExtra("Hourly_Rate");
@@ -106,6 +112,7 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
             public void onClick(View v) {
                 Intent main = new Intent(SecondActivity.this, MainActivity.class);
                 startActivity(main);
+                overridePendingTransition(0,0);
                 finish();
             }
         });

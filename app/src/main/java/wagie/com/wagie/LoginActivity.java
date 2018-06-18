@@ -5,6 +5,8 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 
 
@@ -47,10 +49,16 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     private FirebaseAuth.AuthStateListener mAuthListener;
 
+    private ProgressDialog mProgress;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        Window w = getWindow();
+        w.addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+        w.addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -65,6 +73,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         mLogin = findViewById(R.id.btn_login);
         mLogin.setOnClickListener(this);
+
+        mProgress = new ProgressDialog(this);
+        mProgress.setTitle("title...");
+        mProgress.setMessage("message...");
+        mProgress.setCancelable(false);
+        mProgress.setIndeterminate(true);
 
 
     }
@@ -106,6 +120,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         if (isSignedIn) {
             Intent intent = new Intent(LoginActivity.this,MainActivity.class);
             startActivity(intent);
+            overridePendingTransition(0,0);
             finish();
         }
     }
@@ -116,11 +131,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.btn_login:
+                signInAnonymously();
+
                 Intent intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
+                overridePendingTransition(0,0);
 
                 mLogin.setClickable(false);
-                signInAnonymously();
 
                 finish();
                 break;
