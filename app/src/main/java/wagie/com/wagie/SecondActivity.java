@@ -2,6 +2,7 @@ package wagie.com.wagie;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.constraint.ConstraintLayout;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
@@ -25,7 +26,7 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
     String dailyValue, weeklyValue, monthlyValue, yearlyValue;
 
     TextView daily, weekly, monthly, yearly;
-    Button btnDaily, btnWeekly, btnMonthly, btnYearly;
+    Button btnDaily, btnWeekly, btnMonthly, btnYearly, btnStartOver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,8 +48,6 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
             public void onClick(View v) {
                 daily.setVisibility(View.VISIBLE);
                 daily.setText(dailyValue);
-
-                Toast.makeText(SecondActivity.this, "שכר שעתי : " + hValue, Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -101,7 +100,22 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
             }
         });
 
+        btnStartOver = findViewById(R.id.third_btn_start_over);
+        btnStartOver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent main = new Intent(SecondActivity.this, MainActivity.class);
+                startActivity(main);
+                finish();
+            }
+        });
 
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 
     @Override

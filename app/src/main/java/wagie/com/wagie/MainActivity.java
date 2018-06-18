@@ -4,9 +4,11 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -16,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
     EditText hRate;
     String hRateValue;
 
+    TextView mError;
+
     Button btnNext;
 
     @Override
@@ -24,15 +28,31 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         hRate = findViewById(R.id.et_hourly_rate);
+        hRate.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                mError.setVisibility(View.INVISIBLE);
+                return false;
+            }
+        });
+
+        mError = findViewById(R.id.main_tv_error);
+        mError.setVisibility(View.INVISIBLE);
 
         btnNext = findViewById(R.id.main_btn_next);
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
-                intent.putExtra("Hourly_Rate", hRate.getText().toString());
-                startActivity(intent);
+                hRateValue = hRate.getText().toString();
 
+                if (hRateValue.isEmpty()){
+                    mError.setVisibility(View.VISIBLE);
+                    mError.setText("הכנס ספרה תקינה");
+                } else {
+                    Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+                    intent.putExtra("Hourly_Rate", hRate.getText().toString());
+                    startActivity(intent);
+                }
             }
         });
     }
