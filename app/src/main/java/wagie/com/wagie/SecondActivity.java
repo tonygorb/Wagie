@@ -17,7 +17,7 @@ import android.widget.Toast;
 
 import java.text.DecimalFormat;
 
-public class SecondActivity extends AppCompatActivity implements View.OnClickListener {
+public class SecondActivity extends AppCompatActivity {
 
     private static final String TAG = "SecondActivity";
 
@@ -58,7 +58,7 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
             public void onClick(View v) {
                 if (showFirst == true){
                     daily.setVisibility(View.VISIBLE);
-                    daily.setText(dailyValue);
+                    daily.setText(dailyValue + " ₪");
                     showFirst = false;
                 } else {
                     daily.setVisibility(View.GONE);
@@ -82,7 +82,7 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
             public void onClick(View v) {
                 if (showFirst == true){
                     weekly.setVisibility(View.VISIBLE);
-                    weekly.setText(weeklyValue);
+                    weekly.setText(weeklyValue + " ₪");
                     showFirst = false;
                 } else {
                     weekly.setVisibility(View.GONE);
@@ -105,7 +105,7 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
             public void onClick(View v) {
                 if (showFirst == true){
                     monthly.setVisibility(View.VISIBLE);
-                    monthly.setText(monthlyValue);
+                    monthly.setText(monthlyValue + " ₪");
                     showFirst = false;
                 } else {
                     monthly.setVisibility(View.GONE);
@@ -128,7 +128,7 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
             public void onClick(View v) {
                 if (showFirst == true){
                     yearly.setVisibility(View.VISIBLE);
-                    yearly.setText(yearlyValue);
+                    yearly.setText(yearlyValue + " ₪");
                     showFirst = false;
                 } else {
                     yearly.setVisibility(View.GONE);
@@ -155,26 +155,5 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-    }
-
-    @Override
-    public void onClick(View v) {
-//        switch (v.getId()){
-//            case R.id.btn_daily_result:
-//
-//                break;
-//
-//            case R.id.weekly_result:
-//
-//                break;
-//
-//            case R.id.monthly_result:
-//
-//                break;
-//
-//            case R.id.yearly_result:
-//
-//                break;
-//        }
     }
 }
